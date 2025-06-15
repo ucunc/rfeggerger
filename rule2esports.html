@@ -2,63 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rule 2 Esports</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #cfc6f5, #e8bdf5, #d1e0f7);
       color: white;
-    }
-    /* Removed header styles */
-    section {
-      padding: 40px 20px;
-    }
-    nav {
-      background-color: #ffffff10;
+      line-height: 1.6;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      flex-direction: column;
     }
-    nav a {
+
+    a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
+    a:hover, nav a:hover {
+      color: #d3c1f9;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      flex: 1;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: rgba(255 255 255 / 0.1);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+    nav a {
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    /* Section Titles */
     .section-title {
-      font-size: 2em;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: white;
       border-left: 6px solid white;
-      padding-left: 10px;
+      padding-left: 12px;
       margin-bottom: 20px;
+      margin-top: 40px;
+      user-select: none;
     }
-    .team-member,
-    .highlight,
-    .news-post {
-      background: #ffffff20;
-      border-radius: 10px;
+
+    /* Cards */
+    .card {
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 12px;
       padding: 20px;
-      margin: 10px 0;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      color: white;
+      transition: background 0.3s ease;
+    }
+    .card:hover {
+      background: rgba(255 255 255 / 0.25);
+    }
+
+    /* Team Member */
+    .team-member h3 {
+      margin-top: 0;
+      font-weight: 600;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
     }
     .na-tag {
       color: white;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 0.9rem;
       margin-left: 8px;
-      font-size: 0.9em;
+      user-select: none;
     }
-    footer {
-      text-align: center;
+    .team-member p {
+      margin-bottom: 0;
+    }
+
+    /* Sponsor highlight */
+    .highlight {
+      font-size: 1.1rem;
+      background: rgba(255 255 255 / 0.15);
+      font-weight: 700;
+      border-radius: 12px;
       padding: 20px;
-      background-color: #ffffff10;
-      font-size: 0.9em;
-    }
-    a {
+      text-align: center;
+      box-shadow: 0 0 8px rgba(255 255 255 / 0.4);
+      margin-bottom: 40px;
+      user-select: none;
       color: white;
+    }
+
+    /* Form */
+    form {
+      background: rgba(255 255 255 / 0.15);
+      padding: 30px 25px;
+      border-radius: 12px;
+      max-width: 480px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      color: white;
+      font-size: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      background: rgba(255 255 255 / 0.3);
+      color: #2c1b7f;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #695bbc;
+    }
+    input:focus, textarea:focus {
+      background: rgba(255 255 255 / 0.5);
+      outline: none;
+    }
+    button {
+      background: #695bbc;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      color: white;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+      width: 100%;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1.5px;
+      user-select: none;
+    }
+    button:hover {
+      background: #8568d1;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(255 255 255 / 0.1);
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      user-select: none;
+      border-top: 1px solid rgba(255 255 255 / 0.15);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .container {
+        padding: 0 15px 30px;
+      }
     }
   </style>
 </head>
@@ -74,98 +205,95 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="team">
-    <div class="section-title">Meet the Team</div>
-    <div class="team-member">
-      <h3>
-        Trix_RL <span class="na-tag">NA</span>
-      </h3>
-      <p>
-        <a href="https://www.twitch.tv/lucid__rl" target="_blank">Twitch</a> |
-        <a href="https://www.tiktok.com/@tr1x_rl4" target="_blank">TikTok</a>
-      </p>
-    </div>
-    <div class="team-member">
-      <h3>
-        Purifyx <span class="na-tag">NA</span>
-      </h3>
-      <p>
-        <a href="https://www.tiktok.com/@kingizaiahh?_t=ZT-8xDGeTmwuyp&_r=1" target="_blank">TikTok</a>
-      </p>
-    </div>
-    <div class="team-member">
-      <h3>
-        Iplayz_ <span class="na-tag">NA</span>
-      </h3>
-      <p>
-        <a href="https://www.twitch.tv/speedtazgamer" target="_blank">Twitch</a> |
-        <a href="https://www.youtube.com/@RPEClan" target="_blank">YouTube</a>
-      </p>
-    </div>
-  </section>
+  <main class="container">
 
-  <section id="owners">
-    <div class="section-title">Owners</div>
-    <div class="team-member">
-      <h3>Lxgann</h3>
-      <p>
-        <a href="https://x.com/@Lxgannwyd" target="_blank">Twitter</a> |
-        <a href="https://twitch.tv/lxgannwyd" target="_blank">Twitch</a>
-      </p>
-    </div>
-  </section>
+    <section id="team">
+      <div class="section-title">Meet the Team</div>
+      <div class="card team-member">
+        <h3>Trix_RL <span class="na-tag">NA</span></h3>
+        <p>
+          <a href="https://www.twitch.tv/lucid__rl" target="_blank" rel="noopener noreferrer">Twitch</a> |
+          <a href="https://www.tiktok.com/@tr1x_rl4" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </p>
+      </div>
+      <div class="card team-member">
+        <h3>Purifyx <span class="na-tag">NA</span></h3>
+        <p>
+          <a href="https://www.tiktok.com/@kingizaiahh?_t=ZT-8xDGeTmwuyp&_r=1" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </p>
+      </div>
+      <div class="card team-member">
+        <h3>Iplayz_ <span class="na-tag">NA</span></h3>
+        <p>
+          <a href="https://www.twitch.tv/speedtazgamer" target="_blank" rel="noopener noreferrer">Twitch</a> |
+          <a href="https://www.youtube.com/@RPEClan" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </p>
+      </div>
+    </section>
 
-  <section id="tournaments">
-    <div class="section-title">RLCS &amp; Tournaments</div>
-    <div class="highlight">
-      <p>Coming soon...</p>
-    </div>
-  </section>
+    <section id="owners">
+      <div class="section-title">Owners</div>
+      <div class="card team-member">
+        <h3>Lxgann</h3>
+        <p>
+          <a href="https://x.com/@Lxgannwyd" target="_blank" rel="noopener noreferrer">Twitter</a> |
+          <a href="https://twitch.tv/lxgannwyd" target="_blank" rel="noopener noreferrer">Twitch</a>
+        </p>
+      </div>
+    </section>
 
-  <section id="media">
-    <div class="section-title">Rule 2 Official Channels</div>
-    <div class="highlight">
-      <p>
-        <a href="https://x.com/@RuleTwoRL" target="_blank">Twitter</a> |
-        <a href="https://www.youtube.com/@RuleTwoRL" target="_blank">YouTube</a> |
-        <a href="https://discord.gg/KdppMts4Qj" target="_blank">Discord</a>
-      </p>
-    </div>
-  </section>
+    <section id="tournaments">
+      <div class="section-title">RLCS &amp; Tournaments</div>
+      <div class="card highlight">
+        <p>Coming soon...</p>
+      </div>
+    </section>
 
-  <section id="news">
-    <div class="section-title">News &amp; Updates</div>
-    <div class="news-post">
-      <h4>New Website Launch</h4>
-      <p>Welcome to the official Rule 2 Esports website! More updates soon.</p>
-    </div>
-    <div class="news-post">
-      <h4>Roster Update</h4>
-      <p>VizzZombie has been replaced by Purifyx on the Rule 2 roster.</p>
-    </div>
-  </section>
+    <section id="media">
+      <div class="section-title">Rule 2 Official Channels</div>
+      <div class="card highlight">
+        <p>
+          <a href="https://x.com/@RuleTwoRL" target="_blank" rel="noopener noreferrer">Twitter</a> |
+          <a href="https://www.youtube.com/@RuleTwoRL" target="_blank" rel="noopener noreferrer">YouTube</a> |
+          <a href="https://discord.gg/KdppMts4Qj" target="_blank" rel="noopener noreferrer">Discord</a>
+        </p>
+      </div>
+    </section>
 
-  <section id="sponsor">
-    <div class="section-title">Sponsor</div>
-    <div class="highlight">
-      <p>
+    <section id="news">
+      <div class="section-title">News &amp; Updates</div>
+      <div class="card news-post">
+        <h4>New Website Launch</h4>
+        <p>Welcome to the official Rule 2 Esports website! More updates soon.</p>
+      </div>
+      <div class="card news-post">
+        <h4>Roster Update</h4>
+        <p>VizzZombie has been replaced by Purifyx on the Rule 2 roster.</p>
+      </div>
+    </section>
+
+    <section id="sponsor">
+      <div class="section-title">Sponsor</div>
+      <div class="highlight">
         Use code <strong>RuleTwoRL</strong> at
-        <a href="https://rogueenergy.com/" target="_blank">Rogue Energy</a> for
+        <a href="https://rogueenergy.com/" target="_blank" rel="noopener noreferrer">Rogue Energy</a> for
         10% off!
-      </p>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section id="contact">
-    <div class="section-title">Contact / Join Us</div>
-    <form>
-      <input type="text" placeholder="Name" required /><br /><br />
-      <input type="email" placeholder="Email" required /><br /><br />
-      <textarea placeholder="Your Message" rows="4"></textarea><br /><br />
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <section id="contact">
+      <div class="section-title">Contact / Join Us</div>
+      <form action="mailto:edfeertfedf@gmail.com" method="POST" enctype="text/plain" onsubmit="alert('Thank you for reaching out! We will get back to you soon.');">
+        <input type="text" name="Name" placeholder="Name" required />
+        <input type="email" name="Email" placeholder="Email" required />
+        <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
 
   <footer>&copy; 2025 Rule 2 Esports. All rights reserved.</footer>
+
 </body>
 </html>
